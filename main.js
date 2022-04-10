@@ -24,4 +24,4 @@ const mins = Math.floor(secondsLeft / 60)
 
 secondsLeft = secondsLeft % 60
 
-console.log(hours, mins)
+console.log(hours, mins, secondsLeft)
