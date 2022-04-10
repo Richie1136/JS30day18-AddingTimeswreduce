@@ -9,8 +9,19 @@ const seconds = time.map((t => t.dataset.time)).map((timecode => {
   let minutes = parseInt(mins)
   let sec = parseInt(seconds)
   return (minutes * 60) + sec
-})).reduce((total, seconds) => total + seconds)
+})).reduce((total, videoSec) => total + videoSec)
 
 let secondsLeft = seconds;
-const hours = parseInt(secondsLeft / 3600)
-secondsLeft = 
+const hours = Math.floor((secondsLeft / 3600))
+
+
+// % === remander 
+secondsLeft = secondsLeft % 3600
+
+console.log(secondsLeft)
+
+const mins = Math.floor(secondsLeft / 60)
+
+secondsLeft = secondsLeft % 60
+
+console.log(hours, mins)
